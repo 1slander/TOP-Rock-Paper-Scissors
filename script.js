@@ -1,6 +1,8 @@
 //THE ODIN PROJECT JAVASCRIPT FOUNDATIONS
 //PROJECT 1
-
+"use strict";
+let playerScore = 0;
+let computerScore = 0;
 
 // computer randomly selects one of three option Math.floor(Math.random()* 3)
 
@@ -35,21 +37,22 @@ return playerChoice;
 
 function playRound (playerSelection, computerSelection){
 
+
 if (playerSelection === computerSelection){
-return console.log("Tie");
+console.log("Tie");
 } else if (playerSelection == "rock" && computerSelection == "scissors"){
 console.log("You Win! Rock beats Scissor");
-return playerScore++;
+playerScore++;
 
 }else if (playerSelection == "paper" && computerSelection == "rock"){
 console.log("You Win! Paper beats Rock");
-return playerScore++;
+playerScore++;
 } else if (playerSelection == "scissors" && computerSelection == "paper"){
 console.log("You Win! Scissors beats Paper");
-return playerScore++;
+playerScore++;
 } else {
- console.log(`You Lose! ${computerSelection} beats ${playerSelection} `);
- return computerScore++;
+console.log(`You Lose! ${computerSelection} beats ${playerSelection} `);
+computerScore++;
 }
 }
 
@@ -57,48 +60,29 @@ return playerScore++;
 // play 5 rounds where the score are kept and reports the winner or loser at the end.
 
 function game (){
-let playerScore = 0;
-let computerScore = 0;
-let gameWinner = "";
+
+let endGameMessage = "";
 //loop for 5 games, track round and wins
 for(let i=0; i<5; i++){
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice ();
-  console.log("Player win totals: " + playerScore);
-  console.log("Computer win totals: " + computerScore);
-
-  //Play round
-  function playRound (playerSelection, computerSelection){
-
-if (playerSelection === computerSelection){
-return alert("Tie");
-} else if (playerSelection == "rock" && computerSelection == "scissors"){
-playerScore++;
-return alert("You Win! Rock beats Scissor");
-
-}else if (playerSelection == "paper" && computerSelection == "rock"){
-playerScore++;
-return alert("You Win! Paper beats Rock");
-} else if (playerSelection == "scissors" && computerSelection == "paper"){
-playerScore++;
-return alert("You Win! Scissors beats Paper");
-} else {
-computerScore++;
-return alert(`You Lose! ${computerSelection} beats ${playerSelection} `);
-}
-}
+  
+//Play Round
+  playRound(playerSelection, computerSelection);
+  console.log(`Player win totals: ${playerScore}`);
+  console.log(`Computer win totals: ${computerScore}`);
   
 }
 // determine who won the five round set
 if(playerScore > computerScore){
-  gameWinner = " YOU WIN!";
+  endGameMessage = " YOU WIN!";
 } else if (playerScore === computerScore){
-  gameWinner = "TIE!";
+  endGameMessage = "TIE!";
 } else {
-  gameWinner = "COMPUTER WINS!";
+  endGameMessage = "COMPUTER WINS!";
 }
 
-console.log("The five game winner is:" + gameWinner);
+console.log(`End of the game: ${endGameMessage}`);
 
   
 
