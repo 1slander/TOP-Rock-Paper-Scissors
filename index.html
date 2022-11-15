@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>The Odin Project: Rock, Paper or Scissors</title>
- <link rel="stylesheet" href="style.css">
- <script src="./script.js"> </script>
-</head>
-<body>
- <div class="header">
-  <h1>TOP Javascript Fundamental: Project 1 - Rock, Paper or Scissors.</h1>
-  <p class="firstPara"> To be able to play this game the developer console tool must be activated:</p>
-  <p class="secondPara">Option + ⌘ + J (on macOS), or Shift + CTRL + J (on Windows/Linux)</p>
- </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Odin Project: Rock, Paper or Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header"><h1>Rock, Paper or Scissors.</h1></div>
+    <!-- Score Board -->
+    <div class="scoreBoard">
+      <div class="playerScore">
+        Player
+        <div id="playerScorePoints">0</div>
+      </div>
+      <div class="computerScore">
+        Computer
+        <div id="computerScorePoints">0</div>
+      </div>
+    </div>
+    <!-- Player Choices -->
+    <div class="container">
+      <button id="rockBtn"><img src="./img/rock.png" alt="Rock" /></button>
+      <button id="paperBtn"><img src="./img/paper.png" alt="Paper" /></button>
+      <button id="scissorsBtn">
+        <img src="./img/scissors.png" alt="Scissors" />
+      </button>
+    </div>
+
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
 </html>
