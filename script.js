@@ -3,6 +3,8 @@
 "use strict";
 
 //Variables
+const choices = ["rock", "paper", "scissors"];
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -12,6 +14,10 @@ let computerPoints = document.getElementById("computerScorePoints");
 let rockBtn = document.querySelector("#rockBtn");
 let paperBtn = document.querySelector("#paperBtn");
 let scissorsBtn = document.querySelector("#scissorsBtn");
+
+let engGameMessage = document.getElementsByClassName("end-message");
+let message = document.getElementById("message");
+let restartBtn = document.getElementsByClassName("btn-restart");
 
 // Event Listener
 
@@ -36,19 +42,9 @@ scissorsBtn.addEventListener("click", function () {
 // computer randomly selects one of three option Math.floor(Math.random()* 3)
 
 function getComputerChoice() {
-  const computerNumber = Math.round(Math.random() * 2);
-
-  switch (computerNumber) {
-    case 0:
-      return "rock";
-      break;
-    case 1:
-      return "paper";
-      break;
-    case 2:
-      return "scissors";
-      break;
-  }
+  const RandomComputerChoice =
+    choices[Math.round(Math.random() * choices.length)];
+  return RandomComputerChoice;
 }
 
 // ask for player selection (case-insensitive)
