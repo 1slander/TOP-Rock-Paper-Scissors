@@ -6,7 +6,7 @@
 }
 
 body {
-  background: lightgray;
+  background: darkgray;
 }
 
 h1 {
@@ -116,5 +116,5 @@ h1 {
 
 .end-message,
 .btn-restart {
-  display: active;
+  display: none;
 }
